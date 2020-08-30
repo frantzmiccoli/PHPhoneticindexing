@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/frantzmiccoli/PHPhoneticindexing.png)](http://travis-ci.org/frantzmiccoli/PHPhoneticindexing)
+
 Scope
 ===
 
