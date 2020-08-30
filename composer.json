@@ -1,6 +1,7 @@
 {
     "name": "frantzmiccoli/phphoneticindexing",
     "description": "Phonetic indexing for PHP, uses the standard library for English, Cologne phonetics for German and a custom algorithm for French",
+    "keywords": ["phonetic", "search", "index", "indexing", "soundex"],
     "type": "library",
     "license": "MIT",
     "require": {},
