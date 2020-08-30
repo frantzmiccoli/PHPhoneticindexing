@@ -10,6 +10,27 @@ We try to provide different languages phonetic indexing methods.
 algorithm. https://en.wikipedia.org/wiki/Cologne_phonetics
 * French: uses a custom algorithm (see below)
 
+Installation
+===
+
+```
+composer require frantzmiccoli/phphoneticindexing
+```
+
+Usage
+===
+
+```
+use PhPhoneticIndexing\GetPhoneticIndex;
+
+$getPhoneticIndex = new GetPhoneticIndex();
+
+var_dump($getPhoneticIndex->getPhoneticIndex('carabine', 'fr')); // karabyn
+```
+
+Please note that if you wish to support new languages, those can be added using
+`$getPhoneticIndex->addLanguage()`.
+
 
 French implementation
 ===
