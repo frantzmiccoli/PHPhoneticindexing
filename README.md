@@ -1,12 +1,13 @@
 Scope
 ===
 
-We try to provide different languages phonetic index methods.
+We try to provide different languages phonetic indexing methods.
 
 * English: uses the PHP Standard Library `soundex()`
 * German: uses a custom implementation of the Cologne phonetic indexing 
 algorithm. https://en.wikipedia.org/wiki/Cologne_phonetics
-* French: uses a custom algorithm
+* French: uses a custom algorithm (see below)
+
 
 French implementation
 ===
