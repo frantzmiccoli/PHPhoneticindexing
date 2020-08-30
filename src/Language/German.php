@@ -58,6 +58,10 @@ class German extends RegexIndexingLanguageAbstract {
 
     ];
 
+    public function getLanguageKey(): string {
+        return 'de';
+    }
+
     protected function getReplacementRules(): array {
         return self::GERMAN_RULES;
     }

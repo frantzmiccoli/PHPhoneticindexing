@@ -11,14 +11,15 @@ abstract class RegexIndexingLanguageAbstract implements LanguageInterface {
     private $normalization;
 
     /**
-     *
      * @return string[] keys are the pattern, the values their replacements
      */
     abstract protected function getReplacementRules(): array;
 
+
     public function __construct(Normalization $normalization) {
         $this->normalization = $normalization;
     }
+
 
     public function getPhoneticIndex(string $word): string {
 

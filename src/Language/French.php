@@ -77,6 +77,10 @@ class French extends RegexIndexingLanguageAbstract {
 
     private $removeVowels = false;
 
+    public function getLanguageKey(): string {
+        return 'fr';
+    }
+
     public function getPhoneticIndex(string $word): string {
         $word = parent::getPhoneticIndex($word);
 
