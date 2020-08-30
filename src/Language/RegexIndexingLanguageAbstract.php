@@ -14,23 +14,21 @@ abstract class RegexIndexingLanguageAbstract implements LanguageInterface {
      *
      * @return string[] keys are the pattern, the values their replacements
      */
-    abstract protected function getCharactersMap(): array;
+    abstract protected function getReplacementRules(): array;
 
     public function __construct(Normalization $normalization) {
         $this->normalization = $normalization;
     }
 
     public function getPhoneticIndex(string $word): string {
-        $word = strtolower($word);
-        $word = $this->normalization->removeDiacritics($word);
-        $word = $this->normalization->stripPunctuation($word);
-        $word = preg_replace('/\s/', '', $word);
 
+        $word = strtolower($word);
+        $word = preg_replace('/\s/', '', $word);
         if (empty($word)) {
             return '';
         }
 
-        $inOut = $this->getKeysAndValuesFromMap($this->getCharactersMap());
+        $inOut = $this->getKeysAndValuesFromMap($this->getReplacementRules());
         $ins = array_shift($inOut);
         $outs = array_shift($inOut);
 
@@ -41,21 +39,41 @@ abstract class RegexIndexingLanguageAbstract implements LanguageInterface {
         while (!empty($ins)) {
             $in = array_shift($ins);
             $out = array_shift($outs);
-            $word = $this->multipleReplace($in, $out, $word);
+
+            switch ($in) {
+                case 'strip_punctuation':
+                    $word = $this->normalization->stripPunctuation($word);
+                    break;
+                case 'remove_diactritics':
+                    $word = $this->normalization->removeDiacritics($word);
+                    break;
+                default:
+                    $word = $this->multipleReplace($in, $out, $word);
+            }
         }
 
         return $word;
     }
 
-    private function multipleReplace(
+    protected function multipleReplace(
         string $in,
         string $out,
         string $word
     ): string {
         $oldWord = null;
+
         while ($word != $oldWord) { // last regex changed something
             $oldWord = $word;
+
+            $isRegularExpression = $in[0] == '/';
+
+            if (!$isRegularExpression) {
+                $word = str_replace($in, $out, $word);
+                break;
+            }
+
             $word = preg_replace($in, $out, $word);
+
         }
 
         return $word;

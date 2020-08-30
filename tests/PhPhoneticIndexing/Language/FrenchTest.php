@@ -27,12 +27,28 @@ class FrenchTest extends TestCase {
         $sets = [];
 
         $sets[] = [
+            'word' => 'aigüe',
+            'expectedOutput' => '3ku'
+        ];
+        $sets[] = [
+            'word' => 'enfanter',
+            'expectedOutput' => '1f1t3'
+        ];
+        $sets[] = [
+            'word' => 'lentement',
+            'expectedOutput' => 'l1tem1'
+        ];
+        $sets[] = [
+            'word' => 'aiment',
+            'expectedOutput' => '3m'
+        ];
+        $sets[] = [
             'word' => 'sérieux',
-            'expectedOutput' => 's3rie'
+            'expectedOutput' => 's3rye'
         ];
         $sets[] = [
             'word' => 'sherpa',
-            'expectedOutput' => 'j3rpa'
+            'expectedOutput' => 'j3rba'
         ];
         $sets[] = [
             'word' => 'est',
@@ -40,15 +56,7 @@ class FrenchTest extends TestCase {
         ];
         $sets[] = [
             'word' => 'espiègle',
-            'expectedOutput' => '3spi3gl'
-        ];
-        $sets[] = [
-            'word' => 'aiment',
-            'expectedOutput' => '3m'
-        ];
-        $sets[] = [
-            'word' => 'lentement',
-            'expectedOutput' => 'l1tem1'
+            'expectedOutput' => '3sby3kl'
         ];
         $sets[] = [
             'word' => 'ubuesque',
@@ -56,8 +64,33 @@ class FrenchTest extends TestCase {
         ];
         $sets[] = [
             'word' => 'oublie',
-            'expectedOutput' => 'ubli'
+            'expectedOutput' => 'ubly'
         ];
+        $sets[] = [
+            'word' => 'Aubagne',
+            'expectedOutput' => 'obakn'
+        ];
+        $sets[] = [
+            'word' => 'vouvoie',
+            'expectedOutput' => 'fufa'
+        ];
+        $sets[] = [
+            'word' => 'oeufs',
+            'expectedOutput' => 'ef'
+        ];
+        $sets[] = [
+            'word' => 'transhume',
+            'expectedOutput' => 'tr1sum'
+        ];
+        $sets[] = [
+            'word' => 'zigouilleriez',
+            'expectedOutput' => 'zykuyery3'
+        ];
+        $sets[] = [
+            'word' => 'aisance',
+            'expectedOutput' => '3z1s'
+        ];
+
 
         return $sets;
     }

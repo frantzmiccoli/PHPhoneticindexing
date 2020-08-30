@@ -27,6 +27,10 @@ class GermanTest extends TestCase {
         $sets = [];
 
         $sets[] = [
+            'word' => 'Müller-Lüdenscheidt ',
+            'expectedOutput' => '65752682'
+        ];
+        $sets[] = [
             'word' => 'kartöffeln',
             'expectedOutput' => '472356'
         ];
@@ -37,10 +41,6 @@ class GermanTest extends TestCase {
         $sets[] = [
             'word' => 'kompliziert',
             'expectedOutput' => '4615872'
-        ];
-        $sets[] = [
-            'word' => 'Müller-Lüdenscheidt ',
-            'expectedOutput' => '65752682'
         ];
         $sets[] = [
             'word' => 'tschechische',

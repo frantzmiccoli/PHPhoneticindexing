@@ -13,7 +13,10 @@ namespace PhPhoneticIndexing\Language;
  */
 class German extends RegexIndexingLanguageAbstract {
 
-    private const GERMAN_CHARACTERS_MAP = [
+    private const GERMAN_RULES = [
+        'remove_diactritics' => '',
+        'strip_punctuation' => '',
+
         // beware the order of rules matters, if we start replacing with
         // simple letters we break rules implying more than one letter
 
@@ -49,11 +52,14 @@ class German extends RegexIndexingLanguageAbstract {
 
         '/([0-9])\1+/' => '$1', // remove duplicates
 
-        '/([^^])0/' => '$1' // remove all '0' but the leading one*/
+        '/([^^\s])0/' => '$1', // remove all '0' but the leading one*/
+
+        '/\s/' => '$1' // remove spaces
+
     ];
 
-    protected function getCharactersMap(): array {
-        return self::GERMAN_CHARACTERS_MAP;
+    protected function getReplacementRules(): array {
+        return self::GERMAN_RULES;
     }
 
 }
