@@ -92,3 +92,18 @@ French implementation
 3. Remove `-`
 4. If wished remove `aeiouy123`
 
+Side note
+===
+
+Part of this was developed during a live programming session. Unfortunately the
+quality is awful, but the links are here:
+
+* Live Programming: Phonetic indexing (1/4) - project motivation and existing 
+solutions overview  https://youtu.be/l8BGkOEwCcw 
+* Live Programming: Phonetic indexing (2/4) - existing PHP code to support
+German  https://youtu.be/0f-9BMp0Md4 
+* Live Programming: Phonetic indexing (3/4) - adapting to French language, 
+theory and tests  https://youtu.be/nFFQpKIvXeY
+* Live Programming: Phonetic indexing (4/4) - French language implementation
+https://youtu.be/Jz365DtN9f0
+
