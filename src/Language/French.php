@@ -48,11 +48,11 @@ class French extends RegexIndexingLanguageAbstract {
 
         '/s?ch/' => 'j',
         '/sh([^u])/' => 'j$1',
-        '/g([ei])/' => 'j',
+        '/g([ei])/' => 'j$1',
 
 
         '/[kg]/' => 'k',
-        '/c([^ei])/' => 'k',
+        '/c([^ei])/' => 'k$1',
         '/qu/' => 'k',
 
         '/ill/' => 'y',

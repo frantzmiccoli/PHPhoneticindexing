@@ -27,6 +27,10 @@ class FrenchTest extends TestCase {
         $sets = [];
 
         $sets[] = [
+            'word' => 'carabine',
+            'expectedOutput' => 'karabyn'
+        ];
+        $sets[] = [
             'word' => 'aigüe',
             'expectedOutput' => '3ku'
         ];

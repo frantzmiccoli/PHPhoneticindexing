@@ -74,7 +74,6 @@ abstract class RegexIndexingLanguageAbstract implements LanguageInterface {
             }
 
             $word = preg_replace($in, $out, $word);
-
         }
 
         return $word;
